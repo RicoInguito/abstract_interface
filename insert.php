@@ -9,20 +9,22 @@
 
     public function __construct()
     {
-        $this->conn = new mysqli($this->servernam, $this->username, $this->password);
+        $this->conn = new mysqli($this->servername, $this->username, $this->password);
         // $dis=("CREATE DATABASE IF NOT EXISTS")
         // $this->conn->query($dis);
     }
-    abstract public function data(): string;
   
-
+  abstract public function data(): string;
+  }
     class Datab extends People
     {
-      $dbname = "CREATE DATABASE IF NOT EXISTS $this->dbnam";
+       public function data(): string
+       {
+        $dbname = "CREATE DATABASE IF NOT EXISTS $this->dbname";
 
       return  $this->conn->query($dbname);
+       }
     }
-  }
-  $new = new data();
-  $new->Datab();
+  $new = new Datab();
+  $new->data();
 ?>
