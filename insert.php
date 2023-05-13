@@ -13,6 +13,8 @@
         $dis=("CREATE DATABASE IF NOT EXISTS")
         $this->conn->query($dis);
     }
+    abstract public function data(): string;
   }
+  
 
 ?>
